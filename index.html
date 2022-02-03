@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: rgb(18,18,18);
+		}
+		.plug{
+
+
+			width: 100%;
+
+			height: 30vh;
+
+		}
+		.plug input{
+			width: 80%;
+			margin-left: 10%;
+			height: 50px;
+			margin-top: 10px;
+			border: 2px solid tomato;
+			border-radius: 60px;
+			color: white;
+			background: transparent;
+		}
+		.plug button{
+			font-size: 15px;
+			width: 20%;
+			margin-top: 10px;
+			margin-left: 40%;
+			height: 34px;
+			color: white;
+			background: tomato;
+			border: 1px solid tomato;
+			border-radius: 12px;
+			text-align: center;
+		}
+		.result{
+			width: 94%;
+			height: 65vh;
+			margin-left: 3%;
+			background: linear-gradient(to top,rgb(24,24,24),rgb(18,18,18));
+		}
+		.result h1{
+			text-align: center;
+			color: white;
+			background: tomato;
+		}
+		.result p{
+			color: white;
+			font-size: 10vh;
+			border-bottom: 3.4px solid white;
+
+
+		}
+		span{
+			margin-left: 5%;
+			color: orange;
+		}
+
+	</style>
+</head>
+<body>
+<div class="plug">
+	<input class="cy" type="c_year" name="a" placeholder="Current Year">
+	<input class="by" type="B_year" name="b" placeholder="Birth Year">
+	<button class="btn">Calculate</button>
+</div>
+<div class="result">
+	<h1>Result</h1>
+	<p class="age">Age :</p>
+	<p class="month">Months :</p>
+	<p class="day">Days :</p>
+	<p class="hours">Hours :</p>
+	<p class="minutes">Minutes :</p>
+
+</div>
+	<script type="text/javascript">
+		document.querySelector(".btn").addEventListener("click",get_result);
+		let age= document.querySelector(".age");
+		let month= document.querySelector(".month");
+		let day= document.querySelector(".day");
+		let hour= document.querySelector(".hours");
+		let minute= document.querySelector(".minutes");
+		function get_result(){
+			const cy = document.querySelector(".cy").value;
+			const by = document.querySelector(".by").value;
+			let a = cy-by;
+			let m = a*12;
+			let d = m*30;
+			let h = d*24;
+			let mi = h*60;
+
+			age.innerHTML ="Age :<span>"+a+"</span>"; 
+			month.innerHTML ="Months :<span>"+m+"</span>"; 
+			day.innerHTML ="Days :<span>"+d+"</span>"; 
+			hour.innerHTML ="Hours :<span>"+h+"</span>"; 
+			minute.innerHTML ="Minutes :<span>"+m+"</span>"; 
+
+
+		}
+	</script>
+
+</body>
+
+</html>
